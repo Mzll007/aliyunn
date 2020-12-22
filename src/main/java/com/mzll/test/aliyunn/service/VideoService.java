@@ -3,19 +3,46 @@ package com.mzll.test.aliyunn.service;
 import com.aliyun.vod.upload.impl.UploadVideoImpl;
 import com.aliyun.vod.upload.req.UploadVideoRequest;
 import com.aliyun.vod.upload.resp.UploadVideoResponse;
+import com.aliyuncs.DefaultAcsClient;
+import com.aliyuncs.exceptions.ClientException;
+import com.aliyuncs.profile.DefaultProfile;
+import com.aliyuncs.vod.model.v20170321.GetPlayInfoRequest;
+import com.aliyuncs.vod.model.v20170321.GetPlayInfoResponse;
 import com.mzll.test.aliyunn.update.VODConfig;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import java.util.ArrayList;
+import java.util.List;
 
 @Service
 public class VideoService {
     @Resource
     private VODConfig config;
-    //    @Value("#{vod.accessKeyId}")
-    private String accessKeyId = config.getAccessKeyId();
-    //    @Value("#{vod.accessKeySecret}")
-    private String accessKeySecret = config.getAccessKeySecret();
+
+
+    public List<String> getPlayInfo(String videoId) throws Exception {
+
+        //    @Value("#{vod.accessKeyId}")
+        String accessKeyId = config.getAccessKeyId();
+        //    @Value("#{vod.accessKeySecret}")
+        String accessKeySecret = config.getAccessKeySecret();
+        DefaultAcsClient client = initVodClient(accessKeyId, accessKeySecret);
+        GetPlayInfoRequest request = new GetPlayInfoRequest();
+//        request.setVideoId("0d237a6a1b2245f3b1674506538780a8");// 将故事。。。
+        request.setVideoId(videoId);// gaoxiao
+        List<GetPlayInfoResponse.PlayInfo> playInfoList = client.getAcsResponse(request).getPlayInfoList();
+        ArrayList<String> urls = new ArrayList<>();
+        playInfoList.forEach(playInfo -> urls.add(playInfo.getPlayURL()));
+        return urls;
+    }
+
+    public static DefaultAcsClient initVodClient(String accessKeyId, String accessKeySecret) throws ClientException {
+        String regionId = "cn-shanghai";  // 点播服务接入区域
+        DefaultProfile profile = DefaultProfile.getProfile(regionId, accessKeyId, accessKeySecret);
+        DefaultAcsClient client = new DefaultAcsClient(profile);
+        return client;
+    }
 
     /**
      * 本地文件上传接口
@@ -26,6 +53,11 @@ public class VideoService {
      * @param fileName
      */
     public UploadVideoResponse uploadVideo(String title, String fileName) {
+
+        //    @Value("#{vod.accessKeyId}")
+        String accessKeyId = config.getAccessKeyId();
+        //    @Value("#{vod.accessKeySecret}")
+        String accessKeySecret = config.getAccessKeySecret();
         UploadVideoRequest request = new UploadVideoRequest(accessKeyId, accessKeySecret, title, fileName);
         /* 可指定分片上传时每个分片的大小，默认为2M字节 */
         request.setPartSize(2 * 1024 * 1024L);

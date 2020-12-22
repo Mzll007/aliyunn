@@ -53,7 +53,7 @@ public class InitVodClient {
     }
 
     // 请求示例
-   /* public static void main(String[] argv) throws ClientException {
+    public static void main(String[] argv) throws ClientException {
         String accessKeyId = "LTAI4Fnd2UQbmyQ2wcmBLRE6";
         String accessKeySecret = "Ew0Kf0Hgvkg6rPb5atSVSusgF4cBRP";
         DefaultAcsClient client = initVodClient(accessKeyId, accessKeySecret);
@@ -74,7 +74,7 @@ public class InitVodClient {
             System.out.print("ErrorMessage = " + e.getLocalizedMessage());
         }
         System.out.print("RequestId = " + response.getRequestId() + "\n");
-    }*/
+    }
 
 
     /**

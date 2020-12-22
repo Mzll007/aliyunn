@@ -6,7 +6,6 @@ import com.aliyuncs.profile.DefaultProfile;
 import com.aliyuncs.vod.model.v20170321.*;
 
 import java.util.List;
-
 public class InitVodClient {
     public static DefaultAcsClient initVodClient(String accessKeyId, String accessKeySecret, String securityToken) throws ClientException {
         String regionId = "cn-shanghai";  // 点播服务接入区域
@@ -54,7 +53,7 @@ public class InitVodClient {
     }
 
     // 请求示例
-    public static void main(String[] argv) throws ClientException {
+   /* public static void main(String[] argv) throws ClientException {
         String accessKeyId = "LTAI4Fnd2UQbmyQ2wcmBLRE6";
         String accessKeySecret = "Ew0Kf0Hgvkg6rPb5atSVSusgF4cBRP";
         DefaultAcsClient client = initVodClient(accessKeyId, accessKeySecret);
@@ -75,7 +74,7 @@ public class InitVodClient {
             System.out.print("ErrorMessage = " + e.getLocalizedMessage());
         }
         System.out.print("RequestId = " + response.getRequestId() + "\n");
-    }
+    }*/
 
 
     /**

@@ -100,8 +100,16 @@
             <artifactId>aliyun-sdk-vod-upload</artifactId>
             <version>1.4.13</version>
         </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-configuration-processor</artifactId>
+            <optional>true</optional>
+        </dependency>
     </dependencies>
-
     <build>
         <plugins>
             <plugin>

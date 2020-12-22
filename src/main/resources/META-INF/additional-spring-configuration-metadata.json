@@ -1,0 +1,13 @@
+{
+  "properties": [
+    {
+      "name": "vod.accessKeySecret",
+      "type": "java.lang.String",
+      "description": "Description for vod.accessKeySecret."
+    },
+    {
+      "name": "vod.accessKeyId",
+      "type": "java.lang.String",
+      "description": "Description for vod.accessKeyId."
+    }
+  ] }

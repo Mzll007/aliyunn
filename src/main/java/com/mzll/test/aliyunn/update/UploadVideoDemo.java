@@ -6,6 +6,7 @@ import com.aliyun.vod.upload.impl.UploadM3u8FileImpl;
 import com.aliyun.vod.upload.impl.UploadVideoImpl;
 import com.aliyun.vod.upload.req.*;
 import com.aliyun.vod.upload.resp.*;
+import org.springframework.stereotype.Repository;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -68,15 +69,15 @@ import java.net.URL;
  * 注意：
  * 请替换示例中的必选参数，示例中的可选参数如果您不需要设置，请将其删除，以免设置无效参数值与您的预期不符。
  */
-
+@Repository
 public class UploadVideoDemo {
     //账号AK信息请填写(必选)
     private static final String accessKeyId = "LTAI4Fnd2UQbmyQ2wcmBLRE6";
     //账号AK信息请填写(必选)
     private static final String accessKeySecret = "Ew0Kf0Hgvkg6rPb5atSVSusgF4cBRP";
 
-    public static void main(String[] args) {
-        /*// 一、视频文件上传
+    /*public static void main(String[] args) {
+        // 一、视频文件上传
         // 视频标题(必选)
         String title = "测试标题";
         // 1.本地文件上传和文件流上传时，文件名称为上传文件绝对路径，如:/User/sample/文件名称.mp4 (必选)
@@ -115,7 +116,6 @@ public class UploadVideoDemo {
             e.printStackTrace();
         }
         testUploadStream(accessKeyId, accessKeySecret, title, fileName, inputStream);
-*/
         // 二、图片上传
 
         // 1.图片上传-本地文件上传
@@ -135,7 +135,7 @@ public class UploadVideoDemo {
 //        testUploadAttachedMediaLocalFile(accessKeyId, accessKeySecret);
         // 辅助媒资-流式上传(文件流和网络流)
 //        testUploadAttachedMediaStream(accessKeyId, accessKeySecret);
-    }
+    }*/
 
     /**
      * 本地文件上传接口

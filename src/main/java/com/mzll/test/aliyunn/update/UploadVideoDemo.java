@@ -72,9 +72,9 @@ import java.net.URL;
 @Repository
 public class UploadVideoDemo {
     //账号AK信息请填写(必选)
-    private static final String accessKeyId = "LTAI4Fnd2UQbmyQ2wcmBLRE6";
+    private static final String accessKeyId = "Q2wcmBLRE6";
     //账号AK信息请填写(必选)
-    private static final String accessKeySecret = "Ew0Kf0Hgvkg6rPb5atSVSusgF4cBRP";
+    private static final String accessKeySecret = "Ew0Kf0Hgvkg6rPSusgF4cBRP";
 
     /*public static void main(String[] args) {
         // 一、视频文件上传

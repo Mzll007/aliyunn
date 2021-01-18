@@ -54,8 +54,8 @@ public class InitVodClient {
 
     // 请求示例
     public static void main(String[] argv) throws ClientException {
-        String accessKeyId = "LTAI4Fnd2UQbmyQ2wcmBLRE6";
-        String accessKeySecret = "Ew0Kf0Hgvkg6rPb5atSVSusgF4cBRP";
+        String accessKeyId = "LTAI4Fnd2UQbmyBLRE6";
+        String accessKeySecret = "Ew0Kf0Hgvkg64cBRP";
         DefaultAcsClient client = initVodClient(accessKeyId, accessKeySecret);
         CreateUploadVideoResponse response = new CreateUploadVideoResponse();
         GetPlayInfoResponse playInfoResponse;
